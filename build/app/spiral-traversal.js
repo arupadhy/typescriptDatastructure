@@ -11,7 +11,6 @@ var SpiralTraversal = (function () {
     SpiralTraversal.dealWithStack = function (stack, stackToBeUpdated, leftFirstFlag, collector) {
         while (stack.length !== 0) {
             var current = stack.pop();
-            console.log("current.data: " + current.data);
             collector.push(current.data);
             if (leftFirstFlag) {
                 if (current.left) {

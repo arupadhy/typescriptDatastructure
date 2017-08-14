@@ -1,5 +1,6 @@
 import { Tree } from "../../app/tree";
 import { SpiralTraversal } from "../../app/spiral-traversal";
+import { PreorderTraversal } from "../../app/pre-order-traversal";
 const expect = require("chai").expect;
 describe("Binary tree", () => {
     it("should create a binary tree with correct inorder traversal for three nodes", () => {
@@ -11,7 +12,7 @@ describe("Binary tree", () => {
         expect(tree.inorderTraversal()).to.deep.equal([10,30,50]);
     });
 
-    it.only("should traverse Binary tree in spiral order", () => {
+    it("should traverse Binary tree in spiral order", () => {
         const tree = new Tree();
         tree.add(10);
         tree.add(50);
@@ -19,9 +20,19 @@ describe("Binary tree", () => {
         tree.add(5);
         tree.add(100);
         tree.add(40);
-        debugger;
         let result = SpiralTraversal.traverse(tree.getRoot());
         console.log(result);
+    });
+
+    it.only("should traverse a binary tree in preorder fashion", () => {
+        const tree = new Tree();
+        tree.add(5);
+        tree.add(4);
+        tree.add(3);
+        tree.add(6);
+        tree.add(10);
+        tree.add(8);
+        expect( PreorderTraversal.traverse(tree.getRoot())).to.deep.equal([5,4,3,6,10,8]);
     });
 
 });

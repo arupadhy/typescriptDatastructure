@@ -2,7 +2,7 @@ import { Node } from "./tree";
 export class SpiralTraversal {
 
     public static traverse(root: Node): any[] {
-        let collector = [];
+        let collector: any[] = [];
         SpiralTraversal.spiralTraverse(root, collector);
         return collector;
     }
