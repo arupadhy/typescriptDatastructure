@@ -1,0 +1,17 @@
+{
+  "name": "typescriptplayground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ut": " tsc --outDir './build/' app/*.ts  && ./node_modules/mocha/bin/_mocha  ./build/spec/unit/*.js",
+    "debug": "node --inspect --debug-brk ./node_modules/mocha/bin/_mocha ./build/spec/unit/*.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.1.1",
+    "mocha": "^3.5.0"
+  }
+}
