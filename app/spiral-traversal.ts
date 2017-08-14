@@ -1,7 +1,7 @@
 import { Node } from "./tree";
 export class SpiralTraversal {
 
-    public static traverse(root: Node): any[] {
+    public static traverse(root: Node | null): any[] {
         let collector: any[] = [];
         SpiralTraversal.spiralTraverse(root, collector);
         return collector;
@@ -29,9 +29,9 @@ export class SpiralTraversal {
         }
     }
 
-    private static spiralTraverse(node: Node, collector: any[]) {
-        let stack1 = [];
-        let stack2 = [];
+    private static spiralTraverse(node: Node | null, collector: any[]) {
+        let stack1: Node[] = [];
+        let stack2: Node[] = [];
         if (node != null) {
             stack1.push(node);
         }

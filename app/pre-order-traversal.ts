@@ -1,13 +1,13 @@
 import { Node } from "./tree";
 export class PreorderTraversal {
 
-    public static traverse(root: Node): any[] {
+    public static traverse(root: Node | null): any[] {
         let collector: any[] = [];
         PreorderTraversal.preorder(root, collector);
         return collector;
     }
 
-    private static preorder(node: Node, collector: any[]): void {
+    private static preorder(node: Node | null, collector: any[]): void {
         if(node == null) {
             return;
         }

@@ -24,7 +24,7 @@ describe("Binary tree", function () {
         var result = spiral_traversal_1.SpiralTraversal.traverse(tree.getRoot());
         console.log(result);
     });
-    it.only("should traverse a binary tree in preorder fashion", function () {
+    it("should traverse a binary tree in preorder fashion", function () {
         var tree = new tree_1.Tree();
         tree.add(5);
         tree.add(4);
@@ -32,7 +32,6 @@ describe("Binary tree", function () {
         tree.add(6);
         tree.add(10);
         tree.add(8);
-        console.log(tree.inorderTraversal());
         expect(pre_order_traversal_1.PreorderTraversal.traverse(tree.getRoot())).to.deep.equal([5, 4, 3, 6, 10, 8]);
     });
 });

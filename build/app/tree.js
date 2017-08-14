@@ -7,12 +7,14 @@ var Tree = (function () {
     Tree.prototype.getRoot = function () {
         return this.root;
     };
-    Tree.prototype.spiralTraversal = function () {
-        var collector = [];
-        this.spiralOrder(this.root, collector);
-        return collector;
+    Tree.prototype.getLength = function () {
+        return this.length(this.root);
     };
-    Tree.prototype.spiralOrder = function (root, collector) {
+    Tree.prototype.length = function (node) {
+        if (node == null) {
+            return 0;
+        }
+        return 1 + this.length(node.left) + this.length(node.right);
     };
     Tree.prototype.inorderTraversal = function () {
         var collector = [];
@@ -24,7 +26,6 @@ var Tree = (function () {
             return;
         }
         this.printInorder(node.left, collector);
-        console.log(" " + node.data);
         collector.push(node.data);
         this.printInorder(node.right, collector);
     };

@@ -1,8 +1,8 @@
 export class Tree {
 
-    private root: Node;
+    private root: Node | null;
 
-    public getRoot(): Node {
+    public getRoot(): Node | null {
         return this.root;
     }
 
@@ -10,33 +10,33 @@ export class Tree {
         this.root = null;
     }
 
-    public spiralTraversal(): any[] {
-        let collector = [];
-        this.spiralOrder(this.root, collector);
-        return collector;
+    public getLength(): number {
+        return this.length(this.root);
     }
 
-    private spiralOrder(root: Node, collector): void {
-
+    private length(node: Node | null): number {
+        if(node == null) {
+            return 0;
+        }
+        return 1 + this.length(node.left) + this.length(node.right);
     }
 
     public inorderTraversal(): any[] {
-        let collector = [];
+        let collector: any[] = [];
         this.printInorder(this.root, collector);
         return collector;
     }
 
-    private printInorder(node: Node, collector: any[]): void {
+    private printInorder(node: Node | null, collector: any[]): void {
         if (node == null) {
             return;
         }
         this.printInorder(node.left, collector);
-        console.log(` ${node.data}`);
         collector.push(node.data);
         this.printInorder(node.right, collector);
     }
 
-    private addData(node: Node, data: any): Node {
+    private addData(node: Node | null, data: any): Node {
         if (node == null) {
             node = new Node(data);
         } else if (data <= node.data) {
@@ -54,9 +54,9 @@ export class Tree {
 
 export class Node {
     data: any;
-    left: Node;
-    right: Node;
-    public constructor(info) {
+    left: Node | null;
+    right: Node | null;
+    public constructor(info: any) {
         this.data = info;
         this.left = null;
         this.right = null;

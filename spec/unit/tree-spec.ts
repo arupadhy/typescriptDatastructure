@@ -24,7 +24,7 @@ describe("Binary tree", () => {
         console.log(result);
     });
 
-    it.only("should traverse a binary tree in preorder fashion", () => {
+    it("should traverse a binary tree in preorder fashion", () => {
         const tree = new Tree();
         tree.add(5);
         tree.add(4);
